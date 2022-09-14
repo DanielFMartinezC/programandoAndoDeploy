@@ -8,7 +8,7 @@ const Welcome = () => {
   const {confirmationCode} = useParams()
       
     const verifyUser = async (code) => {
-        const response = await axios.get(`http://localhost:3001/api/users/auth/confirm/${code}`);
+        const response = await axios.get(`https://pruebadeploypf.herokuapp.com/users/auth/confirm/${code}`);
         return response.data;
       };
     

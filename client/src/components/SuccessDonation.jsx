@@ -30,7 +30,7 @@ function SuccessDonation() {
       dispatch(updateUser(payload, idUpdate))
         .then(console.log("actualizado con exito"))
         .then(
-          axios.post(`http://localhost:3001/api/users/emailDonationSuccess/`, {
+          axios.post(`https://pruebadeploypf.herokuapp.com/api/users/emailDonationSuccess/`, {
             name: userToUpdate.name,
             email: userToUpdate.email,
             amount: amount,

@@ -19,7 +19,7 @@ function Donators() {
     e.preventDefault();
     console.log("me disparé");
     const link = await axios
-      .get(`http://localhost:3001/api/paypal/create-payment/${amount}`)
+      .get(`https://pruebadeploypf.herokuapp.com/api/paypal/create-payment/${amount}`)
       .then((r) => r.data);
     //console.log(link);
     window.localStorage.setItem("amount", amount);
