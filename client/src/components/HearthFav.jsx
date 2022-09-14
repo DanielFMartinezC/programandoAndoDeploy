@@ -46,13 +46,13 @@ export default function HearthFav({ course,userObj }) {
   // let userNuevo = JSON.parse(JSON.stringify(user ? user : null));
   // const [favoritoAgregado, setFavoritoAgregado] = useState("");
   const deleteFavorite2 = async (courseId,userId) => {
-    const response = await axios.put(`http://localhost:3001/api/users/deleteFavorites/${userId}/`,
+    const response = await axios.put(`https://pruebadeploypf.herokuapp.com/api/users/deleteFavorites/${userId}/`,
     [courseId]);
     return response.data;
   };
 
   const addFavorite2 = async (courseId,userId) => {
-    const response = await axios.put(`http://localhost:3001/api/users/addFavorites/${userId}/`,
+    const response = await axios.put(`https://pruebadeploypf.herokuapp.com/api/users/addFavorites/${userId}/`,
     [courseId]);
     return response.data;
   };
