@@ -22,7 +22,7 @@ const sendConfirmationEmail = (name, email, confirmationCode) => {
       html: `<h1>Email Confirmation</h1>
         <h2>Hello ${name}</h2>
         <p>Thank you for subscribing. Please confirm your email by clicking on the following link</p>
-        <a href=https://classy-trifle-bc4974.netlify.app/confirm/${confirmationCode}> Click here</a>
+        <a href=https://programando-ando-deploy.vercel.app/confirm/${confirmationCode}> Click here</a>
         </div>`,
     })
     .catch((err) => console.log(err));
@@ -37,7 +37,7 @@ const sendChangePasswordEmail = (name, email, changePasswordCode) => {
       html: `<h1>Change password for ${email}</h1>
         <h2>Hello ${name}</h2>
         <p>You have requested a password change for the email ${email},If you have not requested this password change, please contact support </p>
-        <a href=https://classy-trifle-bc4974.netlify.app/changepass/${changePasswordCode}> Click here</a>
+        <a href=https://programando-ando-deploy.vercel.app/changepass/${changePasswordCode}> Click here</a>
         </div>`,
     })
     .catch((err) => console.log(err));
