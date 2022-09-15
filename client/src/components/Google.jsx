@@ -25,7 +25,7 @@ export default function Google() {
     navigate('/')
   };
 
-  console.log(user);
+
 
   const handleSignOut = (event) => {
     setUser({});
