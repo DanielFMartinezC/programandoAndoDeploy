@@ -25,8 +25,8 @@ const createPayment = async (req, res) => {
       brand_name: "programandoando.com",
       landing_page: "LOGIN",
       user_action: "PAY_NOW",
-      return_url: `https://classy-trifle-bc4974.netlify.app/execute-payment`,
-      cancel_url: `https://classy-trifle-bc4974.netlify.app/cancel-payment`,
+      return_url: `https://programando-ando-deploy.vercel.app/execute-payment`,
+      cancel_url: `https://programando-ando-deploy.vercel.app/cancel-payment`,
     },
   };
   request.post(
