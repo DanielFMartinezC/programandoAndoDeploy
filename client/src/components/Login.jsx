@@ -63,7 +63,7 @@ export default function Login() {
       setPassword("");
       setEmail("");
 
-      setTimeout(function () {
+      setTimeout( function () {
         let usuarioLocal = window.localStorage.getItem("user");
         console.log(usuarioLocal)
         if (usuarioLocal) {
@@ -91,7 +91,7 @@ export default function Login() {
             showConfirmButton: false,
           })
         }
-      }, 500);
+      }, 1000);
     }
   };
 
