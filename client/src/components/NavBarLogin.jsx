@@ -15,7 +15,7 @@ function NavBarLogin() {
   const usuario = window.localStorage.getItem('user')
   let userObj = JSON.parse(usuario);
   const rolUser = userObj.user.role
-  console.log(userObj.user.role)
+  
 
   return (
     rolUser === 'user' ?
