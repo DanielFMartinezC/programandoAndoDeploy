@@ -65,7 +65,7 @@ const getUserById = async (req, res, next) => {
     }
     return res.json(user);
   } catch (e) {
-    return res.send(e.message);
+    return res.json(e.message);
   }
 };
 const createUser = async (req, res, next) => {
