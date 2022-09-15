@@ -19,7 +19,7 @@ export default function Login() {
 
   const [usuario, setUsuario] = useState({});
 
-  useEffect(() => {}, []);
+  useEffect(() => { }, []);
 
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -63,7 +63,7 @@ export default function Login() {
       setPassword("");
       setEmail("");
 
-      setTimeout( function () {
+      setTimeout(function () {
         let usuarioLocal = window.localStorage.getItem("user");
         console.log(usuarioLocal)
         if (usuarioLocal) {
@@ -106,8 +106,8 @@ export default function Login() {
   };
 
   return (
-    <div style={{backgroundColor: 'rgb(240, 240, 240)'}} className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-      <NavBar/>
+    <div style={{ backgroundColor: 'rgb(240, 240, 240)' }} className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+      <NavBar />
       <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
         <h1 style={{ color: "rgb(17, 52, 82)" }} className="text-3xl font-semibold text-center text-black uppercase">
           Sign in
@@ -173,7 +173,7 @@ export default function Login() {
           <div className="absolute px-5 bg-white font-bold">Or</div>
         </div>
         <div className="flex mt-4 gap-x-2">
-          <Google/>
+          <Google />
         </div>
 
         <p className="mt-8 text-xs font-medium text-center text-black">
