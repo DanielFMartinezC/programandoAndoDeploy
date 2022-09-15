@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 
 
 export default function Login() {
+  console.log(window.localStorage.getItem("user"))
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.programandoando);
