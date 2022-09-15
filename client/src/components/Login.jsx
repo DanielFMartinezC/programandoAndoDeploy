@@ -64,7 +64,7 @@ export default function Login() {
 
       setTimeout(function () {
         let usuarioLocal = window.localStorage.getItem("user");
-
+        console.log(usuarioLocal)
         if (usuarioLocal) {
           setError("login exitoso");
           setTimeout(function () {
