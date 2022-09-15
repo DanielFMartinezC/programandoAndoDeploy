@@ -13,7 +13,7 @@ app.use((req, res, next) => {
        res.setHeader('Access-Control-Allow-Origin', '*');
     
     // Metodos de solicitud que deseas permitir
-       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH');
     
     // Encabecedados que permites (ej. 'X-Requested-With,content-type')
        res.setHeader('Access-Control-Allow-Headers', '*');
