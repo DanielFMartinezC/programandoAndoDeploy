@@ -102,14 +102,14 @@ export const getFavorites = (id) => async (dispatch) => {
 };
 
 export const getScoring = (id) => async (dispatch) => {
-  const user = await axios.get(`http://localhost:3001/api/users/${id}`);
+  const user = await axios.get(`https://pruebadeploypf.herokuapp.com/api/users/${id}`);
   console.log("hola");
   console.log(user.data.scoring);
   dispatch(getScoringCourse(user.data.scoring));
 };
 
 export const getownPathCourse = (id) => async (dispatch) => {
-  const user = await axios.get(`http://localhost:3001/api/users/${id}`);
+  const user = await axios.get(`https://pruebadeploypf.herokuapp.com/api/users/${id}`);
 
   dispatch(getownPath(user.data.ownPath));
 };
@@ -205,7 +205,7 @@ export const createsSchool = (payload) => async (dispatch) => {
 
 export const createSchoolUser = (payload, id) => async (dispatch) => {
   const response = await axios.post(
-    `http://localhost:3001/api/schools/${id}`,
+    `https://pruebadeploypf.herokuapp.com/api/schools/${id}`,
     payload
   );
   return response;
@@ -228,7 +228,7 @@ export const getUser = (id) => (dispatch) => {
 
 export const userOpinion = (id, payload) => async (dispatch) => {
   await axios
-    .put(`http://localhost:3001/api/users/userOpinion/${id}`, payload)
+    .put(`https://pruebadeploypf.herokuapp.com/api/users/userOpinion/${id}`, payload)
     .then((res) => dispatch(getUserById(res.data)))
     .catch((e) => console.log(e));
 };
@@ -305,7 +305,7 @@ export const googleUserLogin = (payload) => async (dispatch) => {
 };
 export const gitHubLogin = () => async (dispatch) => {
   const response = await axios
-    .get("http://localhost:3001/api/auth/github_login")
+    .get("https://pruebadeploypf.herokuapp.com/api/auth/github_login")
     .then((res) => {
       console.log(res.data);
       dispatch(getSession(res.data));
@@ -388,28 +388,28 @@ export const getVideoByName = (name) => (dispatch) => {
 
 export const getForoById = (id) => (dispatch) => {
   axios
-    .get(`http://localhost:3001/api/foros/${id}`)
+    .get(`https://pruebadeploypf.herokuapp.com/api/foros/${id}`)
     .then((res) => dispatch(getForo(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getAllForos = () => (dispatch) => {
   axios
-    .get("http://localhost:3001/api/foros")
+    .get("https://pruebadeploypf.herokuapp.com/api/foros")
     .then((res) => dispatch(getForos(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const updateForo = (idForo, payload) => (dispatch) => {
   axios
-    .put(`http://localhost:3001/api/foros/${idForo}`, payload)
+    .put(`https://pruebadeploypf.herokuapp.com/api/foros/${idForo}`, payload)
     .then((res) => dispatch(getForo(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const updateDeleteCommentorAnswer = (idForo, payload) => (dispatch) => {
   axios
-    .patch(`http://localhost:3001/api/foros/${idForo}`, payload)
+    .patch(`https://pruebadeploypf.herokuapp.com/api/foros/${idForo}`, payload)
     .then((res) => dispatch(getForo(res.data)))
     .catch((e) => console.log(e));
 };
@@ -619,7 +619,7 @@ export const createNotification = (payload) => async (dispatch) => {
 export const forgetPasswordUpdate = (payload) => async (dispatch) => {
   console.log(payload);
   const response = await axios
-    .post("http://localhost:3001/api/users/forget_password", payload)
+    .post("https://pruebadeploypf.herokuapp.com/api/users/forget_password", payload)
 
     .catch((e) => console.log(e));
 
@@ -629,7 +629,7 @@ export const forgetPasswordUpdate = (payload) => async (dispatch) => {
 export const submitPasswordUpdate = (payload) => async (dispatch) => {
   console.log(payload);
   const response = await axios
-    .post("http://localhost:3001/api/users/auth/:changePassCode", payload)
+    .post("https://pruebadeploypf.herokuapp.com/api/users/auth/:changePassCode", payload)
 
     .catch((e) => console.log(e));
 
@@ -639,14 +639,14 @@ export const submitPasswordUpdate = (payload) => async (dispatch) => {
 // ======================== Banned ========================================
 export const getUsersBanned = () => (dispatch) => {
   axios
-    .get("http://localhost:3001/api/users/banned")
+    .get("https://pruebadeploypf.herokuapp.com/api/users/banned")
     .then((res) => dispatch(getAllUsersBanned(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const restoreUser = (id, payload) => async (dispatch) => {
   const response = await axios.patch(
-    `http://localhost:3001/api/users/${id}`,
+    `https://pruebadeploypf.herokuapp.com/api/users/${id}`,
     payload
   );
   return response;
