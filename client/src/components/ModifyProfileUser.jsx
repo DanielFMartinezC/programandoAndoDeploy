@@ -15,7 +15,7 @@ function ModifyProfileUser(prop) {
 
   const userRole = userObj && userObj.user.role;
   const userId = userObj && userObj.user._id;
-
+  console.log(userId)
   const dispatch = useDispatch();
   // const { users, user } = useSelector((state) => state.programandoando);
   const navigate = useNavigate();
