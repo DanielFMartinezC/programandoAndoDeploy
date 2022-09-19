@@ -3,7 +3,7 @@ node_modules/
 
 #variables de entorno
 api/.env
-
+client/.env
 api/package-lock.json
 
 api/config/account_transport.json
