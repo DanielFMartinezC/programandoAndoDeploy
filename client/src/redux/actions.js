@@ -626,13 +626,33 @@ export const forgetPasswordUpdate = (payload) => async (dispatch) => {
   return response;
 };
 
-export const submitPasswordUpdate = (payload) => async (dispatch) => {
+export const submitPasswordUpdate = (payload, code) => async (dispatch) => {
   console.log(payload);
   const response = await axios
-    .post("https://pruebadeploypf.herokuapp.com/api/users/auth/:changePassCode", payload)
-
-    .catch((e) => console.log(e));
-
+    .post(`https://pruebadeploypf.herokuapp.com/api/users/auth/modify/${code}`, payload)
+    .then(() => {
+      Swal.fire({
+        title: "Success",
+        text: "Password changed successfully",
+        icon: "success",
+        confirmButtonText: "OK",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // navigate("/userspa");
+          // window.location.reload();
+          window.location.href = "https://programando-ando-deploy.vercel.app";
+        }
+      });
+    })
+    .catch((error) =>
+      Swal.fire({
+        title: "Ups Something Happens",
+        // text: "Can't create video please try again",
+        text: error.response.data.error,
+        icon: "error",
+        confirmButtonText: "OK",
+      }).then(console.log(error))
+    );
   return response;
 };
 
