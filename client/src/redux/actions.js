@@ -285,7 +285,7 @@ export const googleUserLogin = (payload) => async (dispatch) => {
         }).then((result) => {
           if (result.isConfirmed) {
             // navigate("/");
-            window.location.href = "http://localhost:3000";
+            window.location.href = "https://programando-ando-deploy.vercel.app/";
           }
         });
         dispatch(getSession(res.data));
