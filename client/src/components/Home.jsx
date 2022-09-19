@@ -50,7 +50,7 @@ function Home() {
   useEffect(() => {
     (async function() {
       const usr = await axios
-        .get(`http://localhost:3001/api/auth/me`, {
+        .get(`https://pruebadeploypf.herokuapp.com/api/auth/me`, {
           withCredentials: true,
         })
         .then((res) => res.data);

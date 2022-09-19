@@ -16,7 +16,7 @@ export default function SubmitPassword() {
     console.log(code);
     console.log(payload);
     const response = await axios.post(
-      `http://localhost:3001/api/users/auth/modify/${code}`,
+      `https://pruebadeploypf.herokuapp.com/api/users/auth/modify/${code}`,
       payload
     );
     return response.data;

@@ -38,7 +38,7 @@ function NavBarAdmin({ delete_cookie }) {
 
     window.localStorage.removeItem("user");
     delete_cookie("github-jwt");
-    // let uwu = await axios.get('http://localhost:3001/api/auth/clear')
+    // let uwu = await axios.get('https://pruebadeploypf.herokuapp.com/api/auth/clear')
     // console.log(uwu);
     setTimeout(function() {
       navigate("/");
