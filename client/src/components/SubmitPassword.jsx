@@ -16,11 +16,6 @@ export default function SubmitPassword() {
     dispatch(submitPasswordUpdate(payload, code));
     console.log(code);
     console.log(payload);
-    const response = await axios.post(
-      `https://pruebadeploypf.herokuapp.com/api/users/auth/modify/${code}`,
-      payload
-    );
-    return response.data;
   };
   const { users } = useSelector((state) => state.programandoando);
 
