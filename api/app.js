@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json()); // esta preparada para recibir info a través de un POST
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://programando-ando-deploy.vercel.app",
     credentials: true,
   })
 );
