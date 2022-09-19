@@ -1,5 +1,5 @@
 import React from "react";
-// import { GITHUB, gitHubRedirectURL, path } from "../utils/gitHubCredentials.js";
+import { GITHUB, gitHubRedirectURL, path } from "../utils/gitHubCredentials.js";
 import github from "../utils/images/github.png";
 
 export default function GitHub() { 
