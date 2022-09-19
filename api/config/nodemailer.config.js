@@ -38,7 +38,7 @@ const sendChangePasswordEmail = (name, email, changePasswordCode) => {
         <h2>Hello ${name}</h2>
         <p>You have requested a password change for the email ${email},If you have not requested this password change, please contact support </p>
         <a href=https://programando-ando-deploy.vercel.app/changepass/${changePasswordCode}> Click here</a>
-        <a href=http://localhost:3000/modify/${changePasswordCode}> Click here</a>
+        <a href=https://programando-ando-deploy.vercel.app/modify/${changePasswordCode}> Click here</a>
         </div>`,
     })
     .catch((err) => console.log(err));
@@ -84,7 +84,7 @@ const sendNotificationEmail = (name, username, email, notification) => {
          You can see the new updates in ProgramandoAndo right now
          If you're interested in ${notification.description}, see the full update in:        
          </p>
-         <a href=http://localhost:3000/login> Click here </a>
+         <a href=https://programando-ando-deploy.vercel.app/login> Click here </a>
         </div>`,
     })
     .catch((err) => console.log(err));
