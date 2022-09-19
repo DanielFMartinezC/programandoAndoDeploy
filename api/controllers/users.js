@@ -62,6 +62,7 @@ const getUserById = async (req, res, next) => {
       handleHtppError(res, "user doesn't exist", 404);
       // res.status(404);
       // return res.send("user doesn't exist");
+      return
     }
     return res.json(user);
   } catch (e) {
