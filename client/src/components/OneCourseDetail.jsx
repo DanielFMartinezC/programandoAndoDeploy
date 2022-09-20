@@ -12,8 +12,12 @@ export default function OneCourseDetail() {
   const dispatch = useDispatch();
   const { idCourse } = useParams();
   const { course, user } = useSelector((state) => state.programandoando);
-  const currentUser = JSON.parse(localStorage.getItem("user"));
-  const idGet = currentUser && currentUser.user._id;
+  // const currentUser = JSON.parse(localStorage.getItem("user"));
+  // const idGet = currentUser && currentUser.user._id;
+  let userLocal = window.localStorage.getItem("user");
+  let userObj = userLocal && JSON.parse(userLocal);
+  let idGet = userObj && userObj.user._id;
+
   window.courseSelect = course;
 
   useEffect(() => {
