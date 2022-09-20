@@ -70,7 +70,7 @@ export default function OneCourseDetail() {
   } else {
     const idVotados =
       Object.keys(user).length !== 0
-        ? user.scoring?.map((scor) => console.log(scor.course))
+        ? user.scoring?.map((scor) => scor.course._id)
         : null;
     // console.log(idVotados);
     //curso en el que está parado, busca si ya lo votó o no
