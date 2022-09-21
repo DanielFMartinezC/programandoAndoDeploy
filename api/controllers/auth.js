@@ -144,6 +144,7 @@ const isLogin = async (req, res) => {
       console.log(findToken);
       const decode = await verifyToken(findToken);
       // console.log(decode)
+      res.header("Access-Control-Allow-Origin", "https://programando-ando-deploy.vercel.app")
       return res.send(decode);
     }
   } catch (error) {

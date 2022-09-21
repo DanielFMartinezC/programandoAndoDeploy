@@ -7,12 +7,21 @@ const fileUpload = require("express-fileupload");
 const app = express();
 
 app.use(express.json()); // esta preparada para recibir info a través de un POST
+
+// // app.use(cors());
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "https://programando-ando-deploy.vercel.app"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(
   cors({
-    origin: "http://programando-ando-deploy.vercel.app",
+    origin: "https://programando-ando-deploy.vercel.app",
     credentials: true,
   })
 );
+
 app.use(
   fileUpload({
     useTempFiles: true,
