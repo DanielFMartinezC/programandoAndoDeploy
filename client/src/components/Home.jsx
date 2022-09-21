@@ -114,15 +114,15 @@ function Home() {
       </div>
       <div className="grid md:grid-cols-1 lg:grid-cols-2 my-24">
         <div className="mb-10 lg:mb-0 flex justify-center">
-          {userObj? <Puntuation /> :<PuntuationNotLogged />  }
+          {userObj ? <Puntuation /> : <PuntuationNotLogged />}
         </div>
         <div className="flex justify-center">
-          <RankUserHome/>
+          <RankUserHome />
         </div>
       </div>
-        <div className="flex justify-center">
-          {userObj? <Foro/> : <ForoNotLogged/>  }
-        </div>
+      <div className="flex justify-center">
+        {userObj ? <Foro /> : <ForoNotLogged />}
+      </div>
       <div
         style={{
           position: "fixed",

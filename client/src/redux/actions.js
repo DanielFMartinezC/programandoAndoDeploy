@@ -33,6 +33,7 @@ import {
   getNotifications,
   getAllUsersBanned,
   getChat,
+  getUsersHome,
 } from "./slice";
 
 // ============================ Courses ============================
@@ -217,6 +218,12 @@ export const getUsers = () => (dispatch) => {
   axios
     .get("https://pruebadeploypf.herokuapp.com/api/users")
     .then((res) => dispatch(getAllUsers(res.data)))
+    .catch((e) => console.log(e));
+};
+export const getUserHome = () => (dispatch) => {
+  axios
+    .get("http://localhost:3001/api/users")
+    .then((res) => dispatch(getUsersHome(res.data)))
     .catch((e) => console.log(e));
 };
 
@@ -690,5 +697,11 @@ export const update_getChat = (id, payload) => async (dispatch) => {
 };
 
 export const create_getChat = (payload) => async (dispatch) => {
-  await axios.post(`http://localhost:3001/api/chat`, payload);
+  await axios
+    .post(`http://localhost:3001/api/chat`, payload)
+    .then(
+      async (r) =>
+        await axios.get(`http://localhost:3001/api/chat/${r.data._id}`)
+    )
+    .then((r) => dispatch(getChat(r.data)));
 };
