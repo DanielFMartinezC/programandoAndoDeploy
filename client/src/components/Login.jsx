@@ -113,6 +113,7 @@ export default function Login() {
           withCredentials: true,
         })
         .then((res) => res.data);
+        console.log(usr)
       if (usr) {
         // Swal.fire({
         //   title: "Successful login",
