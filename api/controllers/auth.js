@@ -102,7 +102,7 @@ const gitHubCreate = async (req, res, next) => {
       sendConfirmationEmail(user.username, user.email, user.confirmationCode);
       res.redirect(
         url.format({
-          pathname: "http://localhost:3000/login",
+          pathname: "https://programando-ando-deploy.vercel.app/login",
           query: {
             message: "Thanks_for_register",
           },
@@ -113,7 +113,7 @@ const gitHubCreate = async (req, res, next) => {
         // handleHtppError(res, "Pending Account. Please Verify Your Email!", 401);
         res.redirect(
           url.format({
-            pathname: "http://localhost:3000/login",
+            pathname: "https://programando-ando-deploy.vercel.app/login",
             query: {
               message: "Pending_Account_Please_Verify_Your_Email!",
             },
@@ -125,7 +125,7 @@ const gitHubCreate = async (req, res, next) => {
           user: find,
         };
         res.cookie(COOKIE_NAME, dataGithub.token);
-        res.redirect("http://localhost:3000/login");
+        res.redirect("https://programando-ando-deploy.vercel.app/login");
       }
     }
   } catch (error) {
