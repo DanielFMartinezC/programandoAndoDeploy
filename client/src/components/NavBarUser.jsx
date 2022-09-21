@@ -304,19 +304,6 @@ function NavBarUser({ delete_cookie }) {
                                 </NavLink>
                               )}
                             </Menu.Item>
-                            {/* <Menu.Item>
-                              {({ active }) => (
-                                <NavLink
-                                  to="/favorites"
-                                  className={classNames(
-                                    active ? "bg-gray-100" : "",
-                                    "block px-4 py-2 text-sm text-gray-700"
-                                  )}
-                                >
-                                  Favorites
-                                </NavLink>
-                              )}
-                            </Menu.Item> */}
                             <Menu.Item>
                               {({ active }) => (
                                 <NavLink
@@ -327,6 +314,19 @@ function NavBarUser({ delete_cookie }) {
                                   )}
                                 >
                                   User Folder
+                                </NavLink>
+                              )}
+                            </Menu.Item>
+                            <Menu.Item>
+                              {({ active }) => (
+                                <NavLink
+                                  to="/internalChat"
+                                  className={classNames(
+                                    active ? "bg-gray-100" : "",
+                                    "block px-4 py-2 text-sm text-gray-700"
+                                  )}
+                                >
+                                  Messages
                                 </NavLink>
                               )}
                             </Menu.Item>

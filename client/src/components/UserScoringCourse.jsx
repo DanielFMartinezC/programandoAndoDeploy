@@ -58,7 +58,7 @@ function UserScoringCourse() {
 
   // =============== Paginado ==========================
   const [cursoActual, setCursoActual] = useState(1);
-  const [cursosPagina] = useState(6);
+  const [cursosPagina] = useState(5);
   const ultimoCurso = cursoActual * cursosPagina;
   const primerCurso = ultimoCurso - cursosPagina;
 
@@ -86,7 +86,7 @@ function UserScoringCourse() {
 
   return (
     <div style={{ backgroundColor: "rgb(240, 240, 240)" }}>
-      <div className="flex flex-col items-center justify-around px-5 py-10 lg:flex-row">
+      <div className="flex flex-col items-center justify-around px-5 py-3 lg:flex-row">
         {/* Paginated */}
         <div className="grid justify-items-center my-5">
           <Paginated
@@ -119,7 +119,7 @@ function UserScoringCourse() {
               }}
             >
               <picture>
-                <NavLink to={`/course/${course._id}`}>
+                <NavLink to={`/course/${course.course._id}`}>
                   <img
                     className="rounded-t-lg object-cover"
                     src={course.course.image}
@@ -221,7 +221,7 @@ function UserScoringCourse() {
                 >
                   <button>
                     <NavLink
-                      to={`/course/${course._id}`}
+                      to={`/course/${course.course._id}`}
                       style={{
                         backgroundColor: "rgb(17, 52, 82)",
                         color: "rgb(201, 196, 184)",

@@ -27,6 +27,36 @@ const getAllUsers = async (req, res, next) => {
           },
         })
         .populate("favorites")
+        .populate({
+          path: "scoring",
+          populate: {
+            path: "course",
+          },
+        })
+        .populate({
+          path: "chats",
+          populate: {
+            path: "transmitter",
+            select: "username",
+          },
+        })
+        .populate({
+          path: "chats",
+          populate: {
+            path: "receiver",
+            select: "username",
+          },
+        })
+        .populate({
+          path: "chats",
+          populate: {
+            path: "content",
+            populate: {
+              path: "author",
+              select: "username",
+            },
+          },
+        })
         .populate("ownPath");
       if (!data) {
         handleHtppError(res, "User not found", 404);
@@ -132,7 +162,7 @@ const createUser = async (req, res, next) => {
       ...body,
       password,
       confirmationCode: emailToken,
-      username,
+      username: body.username ? body.username : username,
       image: { url: defaultImg, public_id: "" },
     };
     const userData = await usersModel.create(newBody);

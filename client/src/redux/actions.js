@@ -32,6 +32,7 @@ import {
   getownPath,
   getNotifications,
   getAllUsersBanned,
+  getChat,
 } from "./slice";
 
 // ============================ Courses ============================
@@ -142,7 +143,7 @@ export const createsCourse = (payload) => async (dispatch) => {
     .post("https://pruebadeploypf.herokuapp.com/api/courses", payload)
     .then(() => {
       Swal.fire({
-        text: "Create Video Successfully",
+        text: "Create Course Successfully",
         icon: "success",
         confirmButtonText: "OK",
       }).then((result) => {
@@ -471,7 +472,7 @@ export const updateCourse = (payload, id) => async (dispatch) => {
       Swal.fire({
         title: "Ups Something Happens",
         // text: "Can't create video please try again",
-        text: error.response.data.error,
+        text: error.response.data.msg,
         icon: "error",
         confirmButtonText: "OK",
       }).then(console.log(error))
@@ -670,4 +671,24 @@ export const restoreUser = (id, payload) => async (dispatch) => {
     payload
   );
   return response;
+};
+
+// ================== functional chat ==================
+export const getChatById = (id) => async (dispatch) => {
+  await axios
+    .get(`http://localhost:3001/api/chat/${id}`)
+    .then((res) => dispatch(getChat(res.data)));
+};
+
+export const update_getChat = (id, payload) => async (dispatch) => {
+  //update
+  await axios.put(`http://localhost:3001/api/chat/${id}`, payload);
+  //get again
+  await axios
+    .get(`http://localhost:3001/api/chat/${id}`)
+    .then((r) => dispatch(getChat(r.data)));
+};
+
+export const create_getChat = (payload) => async (dispatch) => {
+  await axios.post(`http://localhost:3001/api/chat`, payload);
 };

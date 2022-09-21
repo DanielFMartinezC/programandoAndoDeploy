@@ -29,7 +29,7 @@ export const Videos = (props) => {
   const ultimoVideo = paginaActual * videosPagina;
   const primerVideo = ultimoVideo - videosPagina;
 
-  const videosActuales = videos.slice(primerVideo, ultimoVideo);
+  const videosActuales = videos && videos.slice(primerVideo, ultimoVideo);
 
   // const prev = () => {
   //   if (paginaActual <= 1) {
@@ -55,17 +55,20 @@ export const Videos = (props) => {
     }
   };
 
-  const prev = () => {
-    if (paginaActual > 1) {
-      setPaginaActual(paginaActual - 1);
-    }
-  };
-
-  const next = () => {
-    if (paginaActual <= Math.ceil(videos.length / videosPagina)) {
-      setPaginaActual(paginaActual + 1);
-    }
-  };
+  // const prev = () => {
+  //   if (paginaActual > 1) {
+  //     setPaginaActual(paginaActual - 1);
+  //   }
+  // };
+  // const next = () => {
+  //   // if (paginaActual <= Math.ceil(videos.length / videosPagina)) return;
+  //   if (paginaActual <= Math.ceil(videos.length / videosPagina)) {
+  //     setPaginaActual(paginaActual + 1);
+  //     // console.log(paginaActual);
+  //   }
+  //   // return;
+  //   // setPaginaActual(paginaActual + 1);
+  // };
 
   const paginado = (numeroPagina) => {
     setPaginaActual(numeroPagina);
@@ -79,8 +82,6 @@ export const Videos = (props) => {
           videos={videos.length}
           videosPagina={videosPagina}
           paginaActual={paginaActual}
-          prev={prev}
-          next={next}
         ></Paginated>
       </div>
       <div className="grid gap-8 lg:gap-8 mx-5 mt-10 sm:grid-cols-1 md:grid-cols-2 lg:mx-28 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 justify-items-stretch ">
