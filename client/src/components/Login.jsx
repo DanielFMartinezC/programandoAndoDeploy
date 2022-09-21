@@ -109,7 +109,7 @@ export default function Login() {
   useEffect(() => {
     (async function () {
       const usr = await axios
-        .get(`https://pruebadeploypf.herokuapp.com/api/auth/me`, {
+        .get(`/api/auth/me`, {
           withCredentials: true,
         })
         .then((res) => res.data);
