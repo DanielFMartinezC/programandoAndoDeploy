@@ -40,56 +40,56 @@ import {
 
 export const getAllCourses = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/courses")
+    .get("/api/courses")
     .then((res) => dispatch(getCourses(res.data)))
     .catch((e) => console.log(e));
 };
 //=======
 export const getCourses10more = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/courses")
+    .get("/api/courses")
     .then((res) => dispatch(getCourse10more(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getCourses10h = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/courses")
+    .get("/api/courses")
     .then((res) => dispatch(getCourse10h(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getCourses5h = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/courses")
+    .get("/api/courses")
     .then((res) => dispatch(getCourse5h(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getCourses3h = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/courses")
+    .get("/api/courses")
     .then((res) => dispatch(getCourse3h(res.data)))
     .catch((e) => console.log(e));
 };
 //======
 export const getAllCoursesAZ = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/courses")
+    .get("/api/courses")
     .then((res) => dispatch(getCoursesByAZ(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getAllCoursesZA = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/courses")
+    .get("/api/courses")
     .then((res) => dispatch(getCoursesByZA(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getCourse = (id) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/courses/${id}`)
+    .get(`/api/courses/${id}`)
     .then((res) => dispatch(getCourseById(res.data)))
     .catch((e) => console.log(e));
 };
@@ -98,27 +98,27 @@ export const favorite = (course) => (dispatch) => {
 };
 
 export const getFavorites = (id) => async (dispatch) => {
-  const user = await axios.get(`https://pruebadeploypf.herokuapp.com/api/users/${id}`);
+  const user = await axios.get(`/api/users/${id}`);
   // console.log(user);
   dispatch(getFavoriteCourse(user.data.favorites));
 };
 
 export const getScoring = (id) => async (dispatch) => {
-  const user = await axios.get(`https://pruebadeploypf.herokuapp.com/api/users/${id}`);
+  const user = await axios.get(`/api/users/${id}`);
   console.log("hola");
   console.log(user.data.scoring);
   dispatch(getScoringCourse(user.data.scoring));
 };
 
 export const getownPathCourse = (id) => async (dispatch) => {
-  const user = await axios.get(`https://pruebadeploypf.herokuapp.com/api/users/${id}`);
+  const user = await axios.get(`/api/users/${id}`);
 
   dispatch(getownPath(user.data.ownPath));
 };
 
 // export const createsCourse = (payload) => async (dispatch) => {
 //   const response = await axios
-//     .post("https://pruebadeploypf.herokuapp.com/api/courses", payload)
+//     .post("/api/courses", payload)
 //     .then(() => {
 //       Swal.fire({
 //         title: "Create Course",
@@ -141,7 +141,7 @@ export const getownPathCourse = (id) => async (dispatch) => {
 
 export const createsCourse = (payload) => async (dispatch) => {
   const response = await axios
-    .post("https://pruebadeploypf.herokuapp.com/api/courses", payload)
+    .post("/api/courses", payload)
     .then(() => {
       Swal.fire({
         text: "Create Course Successfully",
@@ -169,7 +169,7 @@ export const createsCourse = (payload) => async (dispatch) => {
 
 export const getCoursesByName = (name) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/courses?name=${name}`)
+    .get(`/api/courses?name=${name}`)
     .then((res) => dispatch(getCourseByName(res.data)))
     .catch((e) => console.log(e));
 };
@@ -178,28 +178,28 @@ export const getCoursesByName = (name) => (dispatch) => {
 
 export const getAllSchools = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/schools")
+    .get("/api/schools")
     .then((res) => dispatch(getAllSchool(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getAllSchoolByName = (name) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/schools?name=${name}`)
+    .get(`/api/schools?name=${name}`)
     .then((res) => dispatch(getSchoolsByName(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getSchool = (id) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/schools/${id}`)
+    .get(`/api/schools/${id}`)
     .then((res) => dispatch(getSchoolId(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const createsSchool = (payload) => async (dispatch) => {
   const response = await axios.post(
-    "https://pruebadeploypf.herokuapp.com/api/schools",
+    "/api/schools",
     payload
   );
   return response;
@@ -207,7 +207,7 @@ export const createsSchool = (payload) => async (dispatch) => {
 
 export const createSchoolUser = (payload, id) => async (dispatch) => {
   const response = await axios.post(
-    `https://pruebadeploypf.herokuapp.com/api/schools/${id}`,
+    `/api/schools/${id}`,
     payload
   );
   return response;
@@ -216,34 +216,34 @@ export const createSchoolUser = (payload, id) => async (dispatch) => {
 // ============================ Users ============================
 export const getUsers = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/users")
+    .get("/api/users")
     .then((res) => dispatch(getAllUsers(res.data)))
     .catch((e) => console.log(e));
 };
 export const getUserHome = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/users")
+    .get("/api/users")
     .then((res) => dispatch(getUsersHome(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getUser = (id) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/users/${id}`)
+    .get(`/api/users/${id}`)
     .then((res) => dispatch(getUserById(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const userOpinion = (id, payload) => async (dispatch) => {
   await axios
-    .put(`https://pruebadeploypf.herokuapp.com/api/users/userOpinion/${id}`, payload)
+    .put(`/api/users/userOpinion/${id}`, payload)
     .then((res) => dispatch(getUserById(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const createsUser = (payload) => async (dispatch) => {
   const response = await axios.post(
-    "https://pruebadeploypf.herokuapp.com/api/users/register",
+    "/api/users/register",
     payload
   );
   return response;
@@ -251,7 +251,7 @@ export const createsUser = (payload) => async (dispatch) => {
 
 export const userLogin = (payload) => async (dispatch) => {
   const response = await axios
-    .post("https://pruebadeploypf.herokuapp.com/api/users/login", payload)
+    .post("/api/users/login", payload)
     .then((res) => {
       window.localStorage.setItem("user", JSON.stringify(res.data));
 
@@ -272,7 +272,7 @@ export const userLogin = (payload) => async (dispatch) => {
 
 export const googleUserLogin = (payload) => async (dispatch) => {
   const response = await axios
-    .post("https://pruebadeploypf.herokuapp.com/api/users/google_login", payload)
+    .post("/api/users/google_login", payload)
     .then((res) => {
       if (res.data.newUser === true) {
         Swal.fire({
@@ -313,7 +313,7 @@ export const googleUserLogin = (payload) => async (dispatch) => {
 };
 export const gitHubLogin = () => async (dispatch) => {
   const response = await axios
-    .get("https://pruebadeploypf.herokuapp.com/api/auth/github_login")
+    .get("/api/auth/github_login")
     .then((res) => {
       console.log(res.data);
       dispatch(getSession(res.data));
@@ -334,7 +334,7 @@ export const gitHubLogin = () => async (dispatch) => {
 
 export const verifyUser = async (code) => {
   const response = await axios.get(
-    `https://pruebadeploypf.herokuapp.com/api/users/ath/confirm/${code}`
+    `/api/users/ath/confirm/${code}`
   );
   return response.data;
 };
@@ -342,21 +342,21 @@ export const verifyUser = async (code) => {
 // ============================ Videos ============================
 export const getAllVideos = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/videos")
+    .get("/api/videos")
     .then((res) => dispatch(getVideos(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getVideoById = (id) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/videos/${id}`)
+    .get(`/api/videos/${id}`)
     .then((res) => dispatch(getVideo(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const createsVideo = (payload) => async (dispatch) => {
   const response = await axios
-    .post("https://pruebadeploypf.herokuapp.com/api/videos", payload)
+    .post("/api/videos", payload)
     .then(() => {
       Swal.fire({
         title: "Create Video",
@@ -387,7 +387,7 @@ export const createsVideo = (payload) => async (dispatch) => {
 
 export const getVideoByName = (name) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/schools?name=${name}`)
+    .get(`/api/schools?name=${name}`)
     .then((res) => dispatch(getVideosByName(res.data)))
     .catch((e) => console.log(e));
 };
@@ -396,28 +396,28 @@ export const getVideoByName = (name) => (dispatch) => {
 
 export const getForoById = (id) => (dispatch) => {
   axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/foros/${id}`)
+    .get(`/api/foros/${id}`)
     .then((res) => dispatch(getForo(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const getAllForos = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/foros")
+    .get("/api/foros")
     .then((res) => dispatch(getForos(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const updateForo = (idForo, payload) => (dispatch) => {
   axios
-    .put(`https://pruebadeploypf.herokuapp.com/api/foros/${idForo}`, payload)
+    .put(`/api/foros/${idForo}`, payload)
     .then((res) => dispatch(getForo(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const updateDeleteCommentorAnswer = (idForo, payload) => (dispatch) => {
   axios
-    .patch(`https://pruebadeploypf.herokuapp.com/api/foros/${idForo}`, payload)
+    .patch(`/api/foros/${idForo}`, payload)
     .then((res) => dispatch(getForo(res.data)))
     .catch((e) => console.log(e));
 };
@@ -433,7 +433,7 @@ export function orderByName(payload) {
 // =========================== Update ===========================
 export const updateVideo = (payload, id) => async (dispatch) => {
   const response = await axios
-    .put(`https://pruebadeploypf.herokuapp.com/api/videos/${id}`, payload)
+    .put(`/api/videos/${id}`, payload)
     .then(() => {
       Swal.fire({
         title: "Update Video",
@@ -461,7 +461,7 @@ export const updateVideo = (payload, id) => async (dispatch) => {
 
 export const updateCourse = (payload, id) => async (dispatch) => {
   const response = await axios
-    .put(`https://pruebadeploypf.herokuapp.com/api/courses/${id}`, payload)
+    .put(`/api/courses/${id}`, payload)
     .then(() => {
       Swal.fire({
         title: "Update Course",
@@ -489,7 +489,7 @@ export const updateCourse = (payload, id) => async (dispatch) => {
 
 export const updateSchool = (payload, id) => async (dispatch) => {
   const response = await axios.put(
-    `https://pruebadeploypf.herokuapp.com/api/schools/${id}`,
+    `/api/schools/${id}`,
     payload
   );
   return response;
@@ -497,7 +497,7 @@ export const updateSchool = (payload, id) => async (dispatch) => {
 
 export const updateUser = (payload, id) => async (dispatch) => {
   const response = await axios.put(
-    `https://pruebadeploypf.herokuapp.com/api/users/${id}`,
+    `/api/users/${id}`,
     payload
   );
   return response;
@@ -507,7 +507,7 @@ export const updateUser = (payload, id) => async (dispatch) => {
 export function deleteSchoolById(id) {
   return async function(dispatch) {
     await axios
-      .delete(`https://pruebadeploypf.herokuapp.com/api/schools/${id}`)
+      .delete(`/api/schools/${id}`)
       .then(() => {
         Swal.fire({
           title: "Delete School",
@@ -531,7 +531,7 @@ export function deleteSchoolById(id) {
 export function deleteCourseById(id) {
   return async function(dispatch) {
     await axios
-      .delete(`https://pruebadeploypf.herokuapp.com/api/courses/${id}`)
+      .delete(`/api/courses/${id}`)
       .then(() => {
         Swal.fire({
           title: "Course Delete",
@@ -555,7 +555,7 @@ export function deleteCourseById(id) {
 export function deleteVideoById(id) {
   return async function(dispatch) {
     await axios
-      .delete(`https://pruebadeploypf.herokuapp.com/api/videos/softDelete/${id}`)
+      .delete(`/api/videos/softDelete/${id}`)
       .then(() => {
         Swal.fire({
           title: "Delete Video",
@@ -580,7 +580,7 @@ export function deleteVideoById(id) {
 export function deleteUserById(id) {
   return async function(dispatch) {
     await axios
-      .delete(`https://pruebadeploypf.herokuapp.com/api/users/${id}`)
+      .delete(`/api/users/${id}`)
       .then(() => {
         // alert("Se elimino");
         return dispatch({
@@ -596,7 +596,7 @@ export function deleteUserById(id) {
 export function deleteNotificationById(id) {
   return async function(dispatch) {
     await axios
-      .delete(`https://pruebadeploypf.herokuapp.com/api/notifications/${id}`)
+      .delete(`/api/notifications/${id}`)
       .then(() => {
         alert("Se elimino");
         return dispatch({
@@ -609,14 +609,14 @@ export function deleteNotificationById(id) {
 
 export const getAllNotifications = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/notifications")
+    .get("/api/notifications")
     .then((res) => dispatch(getNotifications(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const createNotification = (payload) => async (dispatch) => {
   const response = await axios.post(
-    "https://pruebadeploypf.herokuapp.com/api/notifications",
+    "/api/notifications",
     payload
   );
   return response;
@@ -627,7 +627,7 @@ export const createNotification = (payload) => async (dispatch) => {
 export const forgetPasswordUpdate = (payload) => async (dispatch) => {
   console.log(payload);
   const response = await axios
-    .post("https://pruebadeploypf.herokuapp.com/api/users/forget_password", payload)
+    .post("/api/users/forget_password", payload)
 
     .catch((e) => console.log(e));
 
@@ -637,7 +637,7 @@ export const forgetPasswordUpdate = (payload) => async (dispatch) => {
 export const submitPasswordUpdate = (payload, code) => async (dispatch) => {
   console.log(payload);
   const response = await axios
-    .post(`https://pruebadeploypf.herokuapp.com/api/users/auth/modify/${code}`, payload)
+    .post(`/api/users/auth/modify/${code}`, payload)
     .then(() => {
       Swal.fire({
         title: "Success",
@@ -667,14 +667,14 @@ export const submitPasswordUpdate = (payload, code) => async (dispatch) => {
 // ======================== Banned ========================================
 export const getUsersBanned = () => (dispatch) => {
   axios
-    .get("https://pruebadeploypf.herokuapp.com/api/users/banned")
+    .get("/api/users/banned")
     .then((res) => dispatch(getAllUsersBanned(res.data)))
     .catch((e) => console.log(e));
 };
 
 export const restoreUser = (id, payload) => async (dispatch) => {
   const response = await axios.patch(
-    `https://pruebadeploypf.herokuapp.com/api/users/${id}`,
+    `/api/users/${id}`,
     payload
   );
   return response;
@@ -683,25 +683,25 @@ export const restoreUser = (id, payload) => async (dispatch) => {
 // ================== functional chat ==================
 export const getChatById = (id) => async (dispatch) => {
   await axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/chat/${id}`)
+    .get(`/api/chat/${id}`)
     .then((res) => dispatch(getChat(res.data)));
 };
 
 export const update_getChat = (id, payload) => async (dispatch) => {
   //update
-  await axios.put(`https://pruebadeploypf.herokuapp.com/api/chat/${id}`, payload);
+  await axios.put(`/api/chat/${id}`, payload);
   //get again
   await axios
-    .get(`https://pruebadeploypf.herokuapp.com/api/chat/${id}`)
+    .get(`/api/chat/${id}`)
     .then((r) => dispatch(getChat(r.data)));
 };
 
 export const create_getChat = (payload) => async (dispatch) => {
   await axios
-    .post(`https://pruebadeploypf.herokuapp.com/api/chat`, payload)
+    .post(`/api/chat`, payload)
     .then(
       async (r) =>
-        await axios.get(`https://pruebadeploypf.herokuapp.com/api/chat/${r.data._id}`)
+        await axios.get(`/api/chat/${r.data._id}`)
     )
     .then((r) => dispatch(getChat(r.data)));
 };
