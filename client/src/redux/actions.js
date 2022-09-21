@@ -222,7 +222,7 @@ export const getUsers = () => (dispatch) => {
 };
 export const getUserHome = () => (dispatch) => {
   axios
-    .get("http://localhost:3001/api/users")
+    .get("https://pruebadeploypf.herokuapp.com/api/users")
     .then((res) => dispatch(getUsersHome(res.data)))
     .catch((e) => console.log(e));
 };
@@ -683,25 +683,25 @@ export const restoreUser = (id, payload) => async (dispatch) => {
 // ================== functional chat ==================
 export const getChatById = (id) => async (dispatch) => {
   await axios
-    .get(`http://localhost:3001/api/chat/${id}`)
+    .get(`https://pruebadeploypf.herokuapp.com/api/chat/${id}`)
     .then((res) => dispatch(getChat(res.data)));
 };
 
 export const update_getChat = (id, payload) => async (dispatch) => {
   //update
-  await axios.put(`http://localhost:3001/api/chat/${id}`, payload);
+  await axios.put(`https://pruebadeploypf.herokuapp.com/api/chat/${id}`, payload);
   //get again
   await axios
-    .get(`http://localhost:3001/api/chat/${id}`)
+    .get(`https://pruebadeploypf.herokuapp.com/api/chat/${id}`)
     .then((r) => dispatch(getChat(r.data)));
 };
 
 export const create_getChat = (payload) => async (dispatch) => {
   await axios
-    .post(`http://localhost:3001/api/chat`, payload)
+    .post(`https://pruebadeploypf.herokuapp.com/api/chat`, payload)
     .then(
       async (r) =>
-        await axios.get(`http://localhost:3001/api/chat/${r.data._id}`)
+        await axios.get(`https://pruebadeploypf.herokuapp.com/api/chat/${r.data._id}`)
     )
     .then((r) => dispatch(getChat(r.data)));
 };
