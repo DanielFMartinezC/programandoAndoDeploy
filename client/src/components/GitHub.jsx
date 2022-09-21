@@ -6,7 +6,7 @@ const path = "/";
 
 
 const gitHubRedirectURL =
-"http://pruebadeploypf.herokuapp.com/api/auth/github_login";
+"https://pruebadeploypf.herokuapp.com/api/auth/github_login";
 
 
 export default function GitHub() { 
