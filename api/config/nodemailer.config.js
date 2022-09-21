@@ -14,6 +14,8 @@ const transport = nodemailer.createTransport({
 
 const sendConfirmationEmail = (name, email, confirmationCode) => {
   console.log("Check");
+  console.log(accountTransport.auth.user)
+  console.log(accountTransport.auth.pass)
   transport
     .sendMail({
       from: accountTransport.auth.user,

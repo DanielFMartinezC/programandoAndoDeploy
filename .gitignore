@@ -18,3 +18,4 @@ client/src/utils/gitHubCredentials.js
 #Cloudinary credentilas
 api/config/cloudinarycredentials.js
 
+client/src/utils/gitHubCredentials.js
