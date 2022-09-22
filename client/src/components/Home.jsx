@@ -49,7 +49,7 @@ function Home() {
   }, [dispatch]);
 
   useEffect(() => {
-    (async function() {
+    (async function () {
       const usr = await axios
         .get(`https://pruebadeploypf.herokuapp.com/api/auth/me`, {
           withCredentials: true,
@@ -86,8 +86,7 @@ function Home() {
                 class="text-xl sm:text-3xl font-bold leading-tight mb-3 capitalize "
               >
                 {" "}
-                THE ONLY THING YOU NEED TO DO IS TO TAKE THE DECISION TO START
-                STUDYING. THE WAY IS GIVEN TO YOU BY US{" "}
+                YOU ONLY NEED TO MAKE THE DECISION TO START STUDYING. WE SHOW YOU HOW.{" "}
               </h1>
               <br />
               <p
@@ -95,12 +94,8 @@ function Home() {
                 class="text-xs font-light sm:text-lg"
               >
                 {" "}
-                This platform has been developed in order to solve a common
-                problem that people who want to study programming have. Here are
-                offered free and ordered study routes using videos and
-                information found on the internet, providing the sources of
-                information to generate a thank you and greater visibility to
-                people who are committed to teach for free.{" "}
+                Free and organized platform with thousands of hours of videos from committed and reputable creators. We scowered the internet so you don’t have to. We’ve found the best tutorials so you spend all your time studying and coding.
+                <br /> Go ahead! Register and take a class!{" "}
               </p>
             </div>
             <div class="lg:w-5/12 order-2">

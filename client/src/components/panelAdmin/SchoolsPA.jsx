@@ -265,7 +265,7 @@ function SchoolsPA() {
               action="#"
               method="POST"
             >
-              <h2 style={{backgroundColor: 'rgb(17, 52, 82)'}} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
+              <h2 style={{ backgroundColor: 'rgb(17, 52, 82)' }} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
                 Create School
               </h2>
 
@@ -336,15 +336,15 @@ function SchoolsPA() {
                 Courses
               </label> */}
               <div className="mb-2">
-              <Select
-                name="course"
-                options={optionListCourses}
-                placeholder="All Courses"
-                value={course}
-                onChange={handleSelect}
-                isSearchable={true}
-                className="font-light"
-              />
+                <Select
+                  name="course"
+                  options={optionListCourses}
+                  placeholder="All Courses"
+                  value={course}
+                  onChange={handleSelect}
+                  isSearchable={true}
+                  className="font-light"
+                />
               </div>
               <div
                 style={{
@@ -371,7 +371,7 @@ function SchoolsPA() {
 
               <div className="flex justify-end items-center my-4 mt-5">
                 <button
-                style={{backgroundColor: 'rgb(55, 109, 109)'}}
+                  style={{ backgroundColor: 'rgb(55, 109, 109)' }}
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4 "
                   disabled={Object.entries(errors).length === 0 ? "" : true}
                 >
@@ -390,7 +390,7 @@ function SchoolsPA() {
               action=""
               onSubmit={(e) => handleSubmitEdit(e)}
             >
-              <h2 style={{backgroundColor: 'rgb(17, 52, 82)'}} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
+              <h2 style={{ backgroundColor: 'rgb(17, 52, 82)' }} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
                 Edit School
               </h2>
               {/* <label className="text-gray-700 font-bold py-2" htmlFor="">
@@ -405,7 +405,7 @@ function SchoolsPA() {
                 className="font-light"
               />
 
-              <h2 style={{backgroundColor: 'rgb(17, 52, 82)'}} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
+              <h2 style={{ backgroundColor: 'rgb(17, 52, 82)' }} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
                 Form to Edit
               </h2>
               <input
@@ -420,7 +420,7 @@ function SchoolsPA() {
               <input
                 name="image"
                 type="text"
-                value={render.image}
+                value={render.image.url ? render.image.url : render.image}
                 className="text-gray-700 font-light shadow border rounded border-gray-300 focus:outline-none focus:shadow-outline py-1 px-3 mb-2"
                 placeholder="http://..."
                 onChange={(e) => handleChange(e)}
@@ -444,7 +444,7 @@ function SchoolsPA() {
                   borderColor: "white",
                 }}
                 className=""
-                // onChange={(e) => handleChange(e)}
+              // onChange={(e) => handleChange(e)}
               >
                 {render.courses.map((v, index) => (
                   <div key={index} className="text-center">
@@ -477,7 +477,7 @@ function SchoolsPA() {
                   borderColor: "white",
                 }}
                 className=""
-                // onChange={(e) => handleChange(e)}
+              // onChange={(e) => handleChange(e)}
               >
                 {/* {courseEdit.map((e) => e)} */}
                 {courseEdit.map((v, index) => (
@@ -494,7 +494,7 @@ function SchoolsPA() {
 
               <div className="flex justify-end items-center my-4 mt-5">
                 <button
-                style={{backgroundColor: 'rgb(55, 109, 109)'}}
+                  style={{ backgroundColor: 'rgb(55, 109, 109)' }}
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4 "
                   disabled={Object.entries(errors).length === 0 ? "" : true}
                 >
@@ -512,7 +512,7 @@ function SchoolsPA() {
               className="w-96 max-w-xs bg-white flex flex-col mt-5 py-2 px-8 rounded-lg shadow-lg"
               action=""
             >
-              <h2 style={{backgroundColor: 'rgb(17, 52, 82)'}} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
+              <h2 style={{ backgroundColor: 'rgb(17, 52, 82)' }} className="text-gray-300 font-bold my-2 p-2 rounded-md bg-gray-200 text-center text-xl">
                 Delete Schools
               </h2>
               {/* <label className="text-gray-700 font-bold py-2" htmlFor="">
@@ -529,7 +529,7 @@ function SchoolsPA() {
 
               <div className="flex justify-end items-center my-4 mt-5">
                 <button
-                style={{backgroundColor: 'rgb(55, 109, 109)'}}
+                  style={{ backgroundColor: 'rgb(55, 109, 109)' }}
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded py-2 px-4 "
                   type="button"
                   onClick={() => handleDeleteCourse(schoolDelete["value"])}

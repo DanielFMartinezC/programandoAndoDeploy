@@ -111,9 +111,19 @@ const updateCourse = async (req, res) => {
         image: image ? image : course.image,
         videos: addVideos ? addVideos : course.videos,
         scores: body.scores ? [...course.scores, body.scores] : course.scores,
-        score: average([...course.scores, body.scores]),
+        // score: body.score
+        //   ? average([...course.scores, body.scores])
+        //   : average([...course.scores, body.scores]),
       }
     );
+    if (body.scores) {
+      await courseModel.updateOne(
+        { _id: id },
+        {
+          score: average([...course.scores, body.scores]),
+        }
+      );
+    }
 
     if (!actualizado.modifiedCount) {
       res.status(422).send("Fail in the query");
