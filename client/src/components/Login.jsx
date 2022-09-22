@@ -109,7 +109,7 @@ export default function Login() {
   useEffect(() => {
     (async function () {
       const usr = await axios
-        .get(`/api/auth/me`, {
+        .get(`https://pruebadeploypf.herokuapp.com/api/auth/me`, {
           withCredentials: true,
         })
         .then((res) => res.data);
@@ -237,7 +237,7 @@ export default function Login() {
             <Google />
           </div>
           <div className="flex mt-3.5 " style={{ paddingLeft: 10 }}>
-            <GitHub />
+            {/* <GitHub /> */}
           </div>
         </div>
         <p className="mt-8 text-xs font-medium text-center text-black">
