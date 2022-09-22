@@ -21,12 +21,16 @@ function Cloudinary({ setCloudinary }) {
     );
     setTimeout(async () => {
       const file = await res.json();
+      // console.log(res);
       setImage(file.secure_url);
+      // console.log(file.public_id);
+      // console.log(file.secure_url);
       setLoading(false);
       const cloudinary = { public_id: file.public_id, url: file.secure_url };
       setCloudinary(cloudinary);
     }, 1500);
-  }
+  };
+
   return (
     <div className="flex items-center justify-center">
       <label
@@ -55,4 +59,4 @@ function Cloudinary({ setCloudinary }) {
   );
 }
 
-export default Cloudinary
+export default Cloudinary;
