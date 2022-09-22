@@ -237,7 +237,7 @@ export default function Login() {
             <Google />
           </div>
           <div className="flex mt-3.5 " style={{ paddingLeft: 10 }}>
-            {/* <GitHub /> */}
+            <GitHub />
           </div>
         </div>
         <p className="mt-8 text-xs font-medium text-center text-black">
