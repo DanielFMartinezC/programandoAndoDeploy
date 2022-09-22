@@ -10,7 +10,7 @@ app.use(express.json()); // esta preparada para recibir info a través de un POS
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://programando-ando-deploy.vercel.app",
     credentials: true,
   })
 );
