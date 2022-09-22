@@ -36,12 +36,12 @@ function ProfilelUser() {
   const [cloudinary, setCloudinary] = useState({});
 
   const handleSubmit = () => {
+    const id = userId;
+    dispatch(updateUser(cloudinary, id)).then((r) => console.log(r));
     const reload = () => {
       window.location.reload();
     };
-    setTimeout(reload, 100);
-    const id = userId;
-    dispatch(updateUser(cloudinary, id)).then((r) => console.log(r));
+    setTimeout(reload, 100); 
     window.location.reload();
   };
 

@@ -403,13 +403,9 @@ const updateUser = async (req, res, next) => {
   try {
     const { id } = req.params;
     const body = req.body;
-    console.log(body);
     const user = await usersModel.findById(id);
     const passwordUser = await usersModel.findById(id).select("password");
-    console.log(passwordUser.password);
-    console.log(body.password);
-    console.log(user.role);
-
+    console.log(body.image)
     if (body.password) {
       var password = await encrypt(body.password);
       console.log(password);
