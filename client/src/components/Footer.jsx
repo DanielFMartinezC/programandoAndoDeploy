@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllSchools } from "../redux/actions";
 import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-// import PWA from "./PWA";
+import PWA from "./PWA";
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -75,18 +75,9 @@ const Footer = () => {
               Download
             </h2>
             <ul className="text-xs text-gray-400">
-              {/* <li className="mb-2">
-              {isReadyForInstall && (
-                <a
-                  style={{ color: "rgb(201, 196, 184)" }}
-                  href="https://github.com/"
-                  className="hover:underline "
-                  onClick={downloadApp}
-                >
-                  Download PWA
-                </a>
-                )}
-              </li> */}
+              <li className="mb-2 hover:underline">
+                <PWA/>
+              </li>
             </ul>
           </div>
         </div>

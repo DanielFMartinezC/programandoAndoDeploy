@@ -412,7 +412,7 @@ export default function AllCourses() {
                   </NavLink>
                 </picture>
 
-                <div>
+                <div style={{ position: 'relative', height: 400 }}>
                   <div>
                     <h5
                       style={{
@@ -482,7 +482,9 @@ export default function AllCourses() {
                       </NavLink>
                     </button>
                   </div>
+                  <div style={{position: 'absolute', right: '35px', bottom: '25px'}}> 
                   {userLocal && <HearthFav course={course} userObj={userObj} />}
+                  </div>
                 </div>
               </div>
             ))}

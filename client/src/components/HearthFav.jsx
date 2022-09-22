@@ -97,7 +97,7 @@ export default function HearthFav({ course, userObj, cursosActuales }) {
           viewBox="0 0 24 24"
           fill={existFavorite ? "red" : "none"}
           strokeWidth={existFavorite ? "" : "1.5"}
-          stroke={existFavorite ? "" : "currentColor"}
+          stroke={existFavorite ? "" : "gray"}
           className="w-6 h-6"
           onClick={handleDelete}
         >
@@ -110,7 +110,7 @@ export default function HearthFav({ course, userObj, cursosActuales }) {
           viewBox="0 0 24 24"
           fill={existFavorite ? "none" : "none"}
           strokeWidth={existFavorite ? "" : "1.5"}
-          stroke={existFavorite ? "black" : "currentColor"}
+          stroke={existFavorite ? "gray" : "gray"}
           className="w-6 h-6"
         >
           <path
