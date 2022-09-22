@@ -95,7 +95,7 @@ export default function HearthFav({ course, userObj, cursosActuales }) {
         <svg // COLOREADO
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          fill={existFavorite ? "currentColor" : "none"}
+          fill={existFavorite ? "red" : "none"}
           strokeWidth={existFavorite ? "" : "1.5"}
           stroke={existFavorite ? "" : "currentColor"}
           className="w-6 h-6"
@@ -108,9 +108,9 @@ export default function HearthFav({ course, userObj, cursosActuales }) {
           onClick={existFavorite ? handleDelete : handleAdd}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
-          fill={existFavorite ? "currentColor" : "none"}
+          fill={existFavorite ? "none" : "none"}
           strokeWidth={existFavorite ? "" : "1.5"}
-          stroke={existFavorite ? "" : "currentColor"}
+          stroke={existFavorite ? "black" : "currentColor"}
           className="w-6 h-6"
         >
           <path

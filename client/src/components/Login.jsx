@@ -232,7 +232,7 @@ export default function Login() {
         <div className="relative flex items-center justify-center w-full mt-6 border border-t">
           <div className="absolute px-5 bg-white font-bold">Or</div>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{ display: "flex", justifyContent: 'center' }}>
           <div className="flex mt-4 ">
             <Google />
           </div>
