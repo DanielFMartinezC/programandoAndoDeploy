@@ -41,8 +41,8 @@ function ProfilelUser() {
     const reload = () => {
       window.location.reload();
     };
-    setTimeout(reload, 100); 
-    window.location.reload();
+    // setTimeout(reload, 100); 
+    // window.location.reload();
   };
 
   return (
