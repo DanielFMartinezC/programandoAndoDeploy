@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
-// const accountTransport = require("./account_transport.json");
-const accountTransport =  process.env.accountTransport;
+const accountTransport = require("./account_transport.json");
+// const accountTransport =  process.env.accountTransport;
 
 const transport = nodemailer.createTransport({
   host: "smtp.gmail.com",
